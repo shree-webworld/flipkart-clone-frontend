@@ -8,12 +8,13 @@ import CartItem from "../components/CartItem";
 import {useState, useEffect} from "react";
 import CartEmpty from "../components/CartEmpty";
 import {clearCart} from "../utils/store/cartSlice";
-import CartTotalValue from "../components/CartTotalValue"
+import CartTotalValue from "../components/CartTotalValue";
+import {useTitle} from "../utils/GeneralFunctions";
 
 
 export default function Cart()
 {
-
+  useTitle("Shopping cart | Flipkart");
   let cartProduct = useSelector((state) =>state.cart);
   const base_url = import.meta.env.VITE_BASE_URL;
 

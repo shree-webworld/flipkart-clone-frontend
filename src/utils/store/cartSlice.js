@@ -76,28 +76,6 @@ const cartSlice = createSlice({
                                                                       }
                                                           );
                                               },
-
-                                              /*cartItemPriceTotal(state, action)
-                                              {
-                                                  return state.reduce((accum, curElem) =>{
-                                                                                                                          accum.total_quantity += curElem.addCartQuantity;
-                                                                                                                          accum.total_price += curElem.price.mrp;
-                                                                                                                          let temp_discount = curElem.price.mrp - curElem.price.cost;
-                                                                                                                          accum.total_discount += temp_discount;
-                                                                                                                          return accum;
-                                                                                                                      },{
-                                                                                                                          total_quantity : 0,
-                                                                                                                          total_price : 0,
-                                                                                                                          total_discount : 0
-                                                                                                                        }
-                                                                                                  );
-                                                          return {
-                                                                      total_quantity,
-                                                                      total_price,
-                                                                      total_discount
-                                                                  }
-                                              }*/
-
                                             }
                               });
 

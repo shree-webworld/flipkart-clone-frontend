@@ -8,6 +8,9 @@ export const STATUSES = Object.freeze({
                                       }); //enum alternative. initialState is object because api can be error, loading, etc.
                                           //no one can change so Object.freeze
 
+const base_url = import.meta.env.VITE_BASE_URL;
+
+
 const productByIDSlice = createSlice({
                                     name:"productByID",
                                     initialState : {
@@ -36,6 +39,6 @@ export default productByIDSlice.reducer;
 
 //Thunk
 export const fetchProductsByID = createAsyncThunk('products/fetchByID', async (id) => {
-    const res = await axios.get(`http://localhost:5001/api/products/${id}`);
+    const res = await axios.get(`${base_url}/api/products/${id}`);
     return res.data;
 });

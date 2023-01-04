@@ -10,11 +10,14 @@ import ProductLoading from "../components/ProductLoading";
 import { Card, CardHeader, CardBody, CardFooter, SimpleGrid, Center, Flex } from '@chakra-ui/react';
 import {  Table, Thead, Tbody, Tfoot, Tr, Th, Td, TableCaption, TableContainer} from '@chakra-ui/react';
 import { add } from '../utils/store/cartSlice';
-
+import {useTitle} from "../utils/GeneralFunctions";
+import SomethingWrong from "../components/SomethingWrong";
 
 
 export default function ProductDetail()
 {
+  useTitle("Online Shopping Site for Mobile, Electronics, Furniture, Grocery, ...");
+
   let dispatch = useDispatch();
   let {data : productByID, status} = useSelector((state) => state.productByID);
   let {id} = useParams();
@@ -30,7 +33,7 @@ export default function ProductDetail()
                                                 }
 
                 if (status === STATUSES.ERROR) {
-                                                    return <h2>Something went wrong!</h2>;
+                                                    return <SomethingWrong />;
                                                 }
 
       let handleAdd = (product) =>{

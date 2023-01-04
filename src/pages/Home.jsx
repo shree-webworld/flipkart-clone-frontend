@@ -8,15 +8,15 @@ import SlidesWithAd from "../components/SlidesWithAd";
 import AdSection from "../components/AdSection";
 import ProductLoading from "../components/ProductLoading";
 import Footer from "../components/Footer";
-
-
+import {useTitle} from "../utils/GeneralFunctions";
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchProducts } from '../utils/store/productSlice';
 import { STATUSES } from '../utils/store/productSlice';
-
+import SomethingWrong from "../components/SomethingWrong";
 
 export default function Home()
 {
+  useTitle("Online Shopping Site for Mobile, Electronics, Furniture, Grocery, ...");
   let dispatch = useDispatch();
   let {data : productCard, status} = useSelector((state) => state.product);
 
@@ -30,7 +30,7 @@ export default function Home()
                                                 }
 
                 if (status === STATUSES.ERROR) {
-                                                    return <h2>Something went wrong!</h2>;
+                                                    return <SomethingWrong />;
                                                 }
 
 

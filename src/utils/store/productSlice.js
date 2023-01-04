@@ -1,6 +1,11 @@
 import {createSlice, createAsyncThunk} from "@reduxjs/toolkit";
 import axios from "axios";
 
+
+
+const base_url = import.meta.env.VITE_BASE_URL;
+
+
 export const STATUSES = Object.freeze({
                                           IDLE: 'idle',
                                           ERROR: 'error',
@@ -47,7 +52,7 @@ export default productSlice.reducer;
 //Thunk 01:10 video
 
 export const fetchProducts = createAsyncThunk('products/fetch', async () => {
-    const res = await axios.get('http://localhost:5001/api/products');
+    const res = await axios.get(`${base_url}/api/products`);
     return res.data;
 });
 
