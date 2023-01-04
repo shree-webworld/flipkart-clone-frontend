@@ -1,6 +1,6 @@
 import { Image } from '@chakra-ui/react';
 import Carousel from "react-multi-carousel";
-import {bannerData} from "../utils/data";
+import {bannerData} from "../utils/Data.js";
 import "react-multi-carousel/lib/styles.css";
 
 export default function Banner()
